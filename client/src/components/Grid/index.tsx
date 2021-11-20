@@ -7,8 +7,32 @@ import HeadingTitle from "../HeadingTitle/index"
 //styles
 import { Wrapper, Content, Card, Image } from "./Grid.styles.js"
 
-type GridProp = {
-  playlists: []
+type images = {
+  height:number,
+  url:string,
+  width:number
+}
+type PlaylistProp = {
+  external_urls: {
+    spotify: string
+  }
+  followers: {
+    href: any
+    total: number
+  }
+  genres: string[]
+  href: string
+  id: string,
+  images:images[],
+  name:string,
+  popularity:number,
+  type:string,
+  uri:string
+}
+
+type Props = {
+  playlists:PlaylistProp,
+  source:string
 }
 
 const Grid = ({ playlists, source }: any) => {

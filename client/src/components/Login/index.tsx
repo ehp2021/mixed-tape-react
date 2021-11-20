@@ -1,4 +1,4 @@
-import Loader from "../Loader/index.js"
+import Loader from "../Loader/index"
 import HeadingTitle from "../HeadingTitle/index"
 
 import { PageWrapper, LoginWrapper, Content } from "./Login.styles.js"
