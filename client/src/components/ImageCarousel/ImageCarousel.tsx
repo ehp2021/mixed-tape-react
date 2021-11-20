@@ -1,6 +1,7 @@
 //components
-import Loader from "../Loader"
-import HeadingTitle from "../HeadingTitle/index"
+import Loader from "../Loader";
+import HeadingTitle from "../HeadingTitle/index";
+import { useHistory } from 'react-router-dom';
 
 import { Wrapper, Content, Card, Image } from "./ImageCarousel.styles"
 
@@ -54,6 +55,11 @@ type Props = {
 }
 
 export default function ImageCarousel({ items, heading }: Props) {
+  let history = useHistory ();
+
+  const clickHandler = (id: string)=> {
+    history.push(`/artist/${id}`);
+  }
   return (
     <Wrapper>
       {items && items.length ? (
@@ -63,7 +69,7 @@ export default function ImageCarousel({ items, heading }: Props) {
             {items.map((item, i) => (
               <Card key={i} className="image_carousel_container">
                 {item.images[0] && (
-                  <Image className="carousel_image" src={item.images[0].url} />
+                  <Image className="carousel_image" src={item.images[0].url} onClick ={()=> clickHandler(item.id)}/>
                 )}
                 <h3 className="item_name">{item.name}</h3>
               </Card>

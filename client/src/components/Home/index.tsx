@@ -85,7 +85,7 @@ const Home = () => {
       setTopArtists(userTopArtists.data.items)
       // console.log(userTopArtists.data.items, "userTopArtist")
       const suggestedArtist = await getRelatedArtists()
-      console.log(suggestedArtist)
+      // console.log(suggestedArtist)
       setRelArtist(suggestedArtist)
 
     }

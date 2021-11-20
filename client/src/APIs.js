@@ -28,3 +28,13 @@ export const getRelatedArtists = async() => {
     const relatedArtistsArray = relatedArtists.data.artists
     return relatedArtistsArray
 }
+
+export const getArtistAlbums = async(id) => {
+    try {
+        const topAlbums = await axios.get(`/artists/${id}/albums`)
+        return topAlbums.data.items
+
+    } catch (e) {
+        console.log(e)
+    }
+}
