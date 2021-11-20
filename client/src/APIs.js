@@ -38,3 +38,25 @@ export const getArtistAlbums = async(id) => {
         console.log(e)
     }
 }
+
+export const getAlbumTracks = async(id) => {
+    try {
+        const Tracks = await axios.get(`/albums/${id}/tracks`)
+
+
+        return Tracks
+
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const getAlbumInfo = async(id) => {
+    try {
+        const AlbumTrack = await axios.get(`/albums/${id}`)
+        return AlbumTrack
+
+    } catch (e) {
+        console.log(e)
+    }
+}

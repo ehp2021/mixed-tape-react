@@ -1,52 +1,51 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div `
   max-width: 100vw;
   border-radius: 5px;
   
 `;
 
 
-export const Content = styled.div`
+export const Content = styled.div `
   color: var(--white);
   display: flex;
+  flex - direction: column;
   justify-content: flex-start;
   padding: 10px;
-  width: 50%vw;
+  width: 30%vw;
 
   .album_img {
-    width: 40px;
-    margin: 10px;
+    width: 90px;
+    margin: 5 px;
 
-  }
+}
 
-  .left_box {
+.left_box {
     display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    overflow: scroll;
-    white-space: nowrap;
-    width: 200px;
-  }
+    padding: 0 5px;
+    overflow: hidden;
+    white - space: nowrap;
+    width: 150 px;
+}
 
-  .track_name {
+.track_name {
     margin: 0
     flex: 1;
-  }
+}
 
-  .artist_name {
+.artist_name {
     display: flex;
-    gap: 8px;
-    font-size: .8rem;
-    line-height: 1.8;
-    color: var(--lightGrey);
-    
-  }
+    gap: 8 px;
+    line - height: 1.8;
+    color: var (--lightGrey);
 
-  .album_name {
+}
+
+.album_name {
     flex: 3;
-    padding-left: 40px;
+    padding - left: 20 px;
 
-  }
+}
 
 `;

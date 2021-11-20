@@ -1,8 +1,9 @@
 import React, {useEffect,useState} from "react";
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import { getArtistAlbums } from '../../APIs'
 import Header from '../Sidebar'
 import { Wrapper, Content, Card,Image, New_Wrapper } from "./ArtistPage.styles.js";
+
 
 const ArtistPage=()=> {
   const {id} = useParams()
@@ -14,7 +15,7 @@ const ArtistPage=()=> {
       const topAlbums = await getArtistAlbums(id);
       setAlbums(topAlbums)
       setName(topAlbums[0].artists[0].name)
-      console.log(topAlbums)
+      console.log(topAlbums,'TOP ALBUMS')
 
     }
     getUserData()
@@ -34,7 +35,7 @@ const ArtistPage=()=> {
                 <Card key={i}>
                     {album.images.length && album.images[0] && (
                         <div>
-                        <Image src={album.images[0].url} alt={album.name} />
+                        <Link to = {`/album/${album.id}`}><Image src={album.images[0].url} alt={album.name} /></Link>
                         </div>
                     )}
                     <h3>{album.name}</h3>
