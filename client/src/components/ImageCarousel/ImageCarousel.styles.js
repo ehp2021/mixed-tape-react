@@ -13,7 +13,6 @@ export const Wrapper = styled.div `
     @media screen and (max-width: 768px) {
       font-size: var(--fontBig);
     }
-  }
 `;
 
 export const Content = styled.div `

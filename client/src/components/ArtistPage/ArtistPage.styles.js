@@ -1,22 +1,27 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div `
+display: flex;
+height: 100vh;
+width: 100vw;
+flex: 4;
+`
+
+export const New_Wrapper = styled.div `
   margin: 0;
+  color: white;
   padding: 20px;
   flex: 4;
   display: flex;
   flex-direction: column;
   background-color: var(--medGrey);
   height: 100%;
-  color:white;
 
 
     @media screen and (max-width: 768px) {
       font-size: var(--fontBig);
     }
-`
-
-
+`;
 
 export const Content = styled.div `
 display: grid;

@@ -2,7 +2,7 @@ import React, {useEffect,useState} from "react";
 import {useParams} from 'react-router-dom'
 import { getArtistAlbums } from '../../APIs'
 import Header from '../Sidebar'
-import { Wrapper, Content, Card,Image } from "./ArtistPage.styles.js";
+import { Wrapper, Content, Card,Image, New_Wrapper } from "./ArtistPage.styles.js";
 
 const ArtistPage=()=> {
   const {id} = useParams()
@@ -14,17 +14,19 @@ const ArtistPage=()=> {
       const topAlbums = await getArtistAlbums(id);
       setAlbums(topAlbums)
       setName(topAlbums[0].artists[0].name)
-      console.log(albums)
+      console.log(topAlbums)
 
     }
     getUserData()
   },[])
+  
     return (
-        <div>
-        <Header /> 
-            <Wrapper>
+        <Wrapper>
+           <Header /> 
+
+           <New_Wrapper>
+              {albums ? <h2>{name}</h2> : "Top Albums"}
                 
-                {albums ? <h2>{name}</h2> : "Top Albums"}
                 
                 <Content>
                 
@@ -38,9 +40,9 @@ const ArtistPage=()=> {
                     <h3>{album.name}</h3>
                 </Card>
                 ))}
-            </Content>
-            </Wrapper>
-        </div>
+                </Content>
+                </New_Wrapper>
+        </Wrapper>
         )
 }
 
