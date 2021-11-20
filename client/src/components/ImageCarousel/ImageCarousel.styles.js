@@ -1,7 +1,7 @@
 //Grid
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div `
   margin: 0;
   padding: 20px;
   flex: 4;
@@ -16,15 +16,15 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div `
   overflow: auto;
   white-space: nowrap;
 `;
 
-export const Card = styled.div`
+export const Card = styled.div `
  display: inline-block;
  background-color: var(--darkGrey);
- border-radius: 8px;
+border-radius: 8px;
  margin: 10px;
  padding: 16px;
  height: 250px;
@@ -39,7 +39,7 @@ export const Card = styled.div`
 }
 `;
 
-export const Image = styled.img`
+export const Image = styled.img `
   width: 100%;
   height: 100%;
   transition: all 0.3s;

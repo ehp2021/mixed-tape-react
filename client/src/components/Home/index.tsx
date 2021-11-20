@@ -8,7 +8,7 @@ import ProfileHeader from "../ProfileHeader"
 //styles
 import { Wrapper, Content, ImageWrapper, Image } from "./Home.styles"
 
-import { getUser, getPlaylists, getTopArtists } from "../../APIs"
+import { getUser, getPlaylists, getTopArtists, getRelatedArtists } from "../../APIs"
 
 type images = {
   height: number
@@ -77,21 +77,29 @@ type PlaylistProp = {
 
 const Home = () => {
   const [topArtists, setTopArtists] = useState<PlaylistProp[]>([])
+  const [relArtist, setRelArtist] = useState<any>([])
 
   useEffect(() => {
     const getUserData = async () => {
       const userTopArtists = await getTopArtists()
       setTopArtists(userTopArtists.data.items)
-      console.log(userTopArtists.data.items, "userTopArtist")
+      // console.log(userTopArtists.data.items, "userTopArtist")
+      const suggestedArtist = await getRelatedArtists()
+      console.log(suggestedArtist)
+      setRelArtist(suggestedArtist)
+
     }
     getUserData()
   }, [])
+
+
 
   return (
     <Wrapper>
       <Sidebar />
       <Content>
         <ImageCarousel items={topArtists} heading={"Top Artists"} />
+        <ImageCarousel items={relArtist} heading={"Suggested Artists"} />
       </Content>
     </Wrapper>
   )

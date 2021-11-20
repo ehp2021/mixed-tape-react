@@ -17,8 +17,14 @@ export const getTracks = (playlist_id) => {
 };
 
 export const getTopArtists = () => {
-    return axios.get(`/me/top/artists`)
+    const artists = axios.get(`/me/top/artists`)
+    return artists
 };
 
-
-
+export const getRelatedArtists = async() => {
+    const topArtist = await axios.get(`/me/top/artists?limit=1`)
+    const id = topArtist.data.items[0].id
+    const relatedArtists = await axios.get(`/artists/${id}/related-artists`)
+    const relatedArtistsArray = relatedArtists.data.artists
+    return relatedArtistsArray
+}
