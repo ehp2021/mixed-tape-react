@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 //components
 import Sidebar from "../Sidebar"
-import ImageCarousel from "../ImageCarousel/ImageCarousel.tsx"
+import ImageCarousel from "../ImageCarousel/ImageCarousel"
 import ProfileHeader from "../ProfileHeader"
 
 //styles

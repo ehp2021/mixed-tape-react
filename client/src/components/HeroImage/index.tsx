@@ -2,7 +2,7 @@ import React from "react"
 
 import { Wrapper, Image } from "./HeroImage.styles.js"
 
-const HeroImage = ({ source }: string) => {
+const HeroImage = ({ source }: any) => {
   console.log(source, "hello")
   return (
     <Wrapper>

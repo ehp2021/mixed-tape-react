@@ -1,6 +1,6 @@
 import "./HeadingTitle.styles"
 
-const HeadingTitle = ({ title }: string) => {
+const HeadingTitle = ({ title }: any) => {
   return <h1>{`${title}`}</h1>
 }
 

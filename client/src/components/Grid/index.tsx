@@ -36,11 +36,13 @@ type Props = {
 }
 
 const Grid = ({ playlists, source }: any) => {
-  console.log(typeof playlists, "playlists")
+  // console.log(typeof playlists, "playlists")
   return (
     <Wrapper>
-      {playlists && playlists.length ? (
-        <>
+      {playlists 
+      // && playlists.length 
+      ? (
+        <div>
           <HeadingTitle title={`Top ${source}s`} />
 
           <Content>
@@ -60,7 +62,7 @@ const Grid = ({ playlists, source }: any) => {
               </Card>
             ))}
           </Content>
-        </>
+        </div>
       ) : (
         <Loader />
       )}

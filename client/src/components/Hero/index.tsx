@@ -1,7 +1,7 @@
 import React from "react"
 
 //components
-import HeroImage from "../HeroImage/index.tsx"
+import HeroImage from "../HeroImage"
 
 import { Wrapper, Content, Text } from "./Hero.styles.js"
 
@@ -60,7 +60,7 @@ const Hero = ({ source, playlists }: Props) => {
         <Content>
           <HeroImage
             source={source}
-            // alt="playlist"
+            alt="playlist"
           />
           <Text>
             <h1>{playlists.name}</h1>

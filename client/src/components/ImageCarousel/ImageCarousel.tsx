@@ -4,6 +4,12 @@ import HeadingTitle from "../HeadingTitle/index"
 
 import { Wrapper, Content, Card, Image } from "./ImageCarousel.styles"
 
+type images = {
+  height: number
+  url: string
+  width: number
+}
+
 type PlaylistProp = {
   collaborative: boolean
   description: string
