@@ -1,45 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 //components
-import Loader from "../Loader/index.js";
-import HeadingTitle from "../HeadingTitle/index.js";
+import Loader from "../Loader/index"
+import HeadingTitle from "../HeadingTitle/index"
 
 //styles
-import { Wrapper, Content, Card, Image } from "./Grid.styles.js";
+import { Wrapper, Content, Card, Image } from "./Grid.styles.js"
 
 type GridProp = {
   playlists: []
 }
 
-const Grid = ({playlists, source}) => {
-  console.log(typeof(playlists), "playlists")
-return (
-  
-  <Wrapper>
-{playlists && playlists.length ? (
-  <>
-      <HeadingTitle title={`Top ${source}s`}/>
+const Grid = ({ playlists, source }: any) => {
+  console.log(typeof playlists, "playlists")
+  return (
+    <Wrapper>
+      {playlists && playlists.length ? (
+        <>
+          <HeadingTitle title={`Top ${source}s`} />
 
-  <Content>
-        {playlists.map((playlist, i) => (
-          <Card key={i}>
-            <Link className="playlist_name" to={`/${source}/${playlist.id}`}>
-              {playlist.images.length && playlist.images[0] && (
-                <div >
-                  <Image src={playlist.images[0].url} alt={playlist.name} />
-                </div>
-              )}
-              <h3 >{playlist.name}</h3>
-            </Link>
-          </Card>
-        ))}
-  </Content>
-  </>
-    ) : ( <Loader/> )}
+          <Content>
+            {playlists.map((playlist: any, i: any) => (
+              <Card key={i}>
+                <Link
+                  className="playlist_name"
+                  to={`/${source}/${playlist.id}`}
+                >
+                  {playlist.images.length && playlist.images[0] && (
+                    <div>
+                      <Image src={playlist.images[0].url} alt={playlist.name} />
+                    </div>
+                  )}
+                  <h3>{playlist.name}</h3>
+                </Link>
+              </Card>
+            ))}
+          </Content>
+        </>
+      ) : (
+        <Loader />
+      )}
+    </Wrapper>
+  )
+}
 
-  </Wrapper>
-    
-)
-};
-
-export default Grid;
+export default Grid
