@@ -8,7 +8,7 @@ export const Wrapper = styled.div `
   display: flex;
   flex-direction: column;
   background-color: var(--medGrey);
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
     @media screen and (max-width: 768px) {
       font-size: var(--fontBig);
@@ -18,6 +18,16 @@ export const Wrapper = styled.div `
 export const Content = styled.div `
   overflow: auto;
   white-space: nowrap;
+
+  .rec.rec-arrow {
+    background-color: green;
+  }
+
+  // .rec.rec-dot.rec-dot_active  {
+  //   // background-color: green;
+  //   border: 1px solid green;
+  // }
+
 `;
 
 export const Card = styled.div `
@@ -26,7 +36,10 @@ export const Card = styled.div `
 border-radius: 8px;
  margin: 10px;
  padding: 16px;
- height: 250px;
+ height: 300px;
+ width:300px;
+ overflow-y: hidden;
+ 
 
  .item_name {
   text-decoration: none;
@@ -44,4 +57,5 @@ export const Image = styled.img `
   transition: all 0.3s;
   object-fit: cover;
 
+  
 `;

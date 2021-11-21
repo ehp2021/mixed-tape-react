@@ -2,6 +2,7 @@
 import Loader from "../Loader";
 import HeadingTitle from "../HeadingTitle/index";
 import { useHistory } from 'react-router-dom';
+import Carousel from 'react-elastic-carousel';
 
 import { Wrapper, Content, Card, Image } from "./ImageCarousel.styles"
 
@@ -54,26 +55,46 @@ type Props = {
   heading: string
 }
 
+// const breakPoints = [
+//   {width: 1, itemsToShow:1},
+//   {width: 550, itemsToShow:2},
+//   {width: 760, itemsToShow:3},
+//   {width: 1250, itemsToShow:4},
+// ]
+
 export default function ImageCarousel({ items, heading }: Props) {
   let history = useHistory ();
 
   const clickHandler = (id: string)=> {
     history.push(`/artist/${id}`);
   }
+
+  // console.log(items.length, "LENGTH")
+
   return (
     <Wrapper>
       {items && items.length ? (
         <>
           <HeadingTitle title={`${heading}`} />
           <Content>
+          <Carousel isRTL={false} 
+
+            enableAutoPlay={true} 
+            itemsToShow={3}>
             {items.map((item, i) => (
               <Card key={i} className="image_carousel_container">
+                
                 {item.images[0] && (
-                  <Image className="carousel_image" src={item.images[0].url} onClick ={()=> clickHandler(item.id)}/>
+                  <div>
+                    <Image className="carousel_image" src={item.images[0].url} onClick ={()=> clickHandler(item.id)}/>
+                    {/* <h3 className="item_name">{item.name}</h3> */}
+                  </div>
                 )}
-                <h3 className="item_name">{item.name}</h3>
+                
               </Card>
             ))}
+          </Carousel>
+           
           </Content>
         </>
       ) : (

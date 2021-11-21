@@ -6,6 +6,7 @@ height: 100vh;
 width: 100vw;
 flex: 4;
 color: white;
+font-family: Arial, sans-serif;
 `
 
 export const New_Wrapper = styled.div `
@@ -18,7 +19,7 @@ export const New_Wrapper = styled.div `
   flex-direction: column;
   background-color: var(--medGrey);
   height: 100%;
-
+  
 
     @media screen and (max-width: 768px) {
       font-size: var(--fontBig);
@@ -75,8 +76,6 @@ export const Image = styled.img `
   // transition: all 0.3s;
   // object-fit: cover;
   // margin-bottom: 10px;
-
-
 `;
 
 export const h2 = styled.img `

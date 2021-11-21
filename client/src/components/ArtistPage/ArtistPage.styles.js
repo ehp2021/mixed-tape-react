@@ -33,6 +33,25 @@ padding: 20px 0;
 width: 100%;
 overflow-y: scroll;
 
+
+::-webkit-scrollbar {
+  background-color: var(--darkGrey);
+  border-radius: 90px;
+  width: 10px;
+  
+}
+
+::-webkit-scrollbar-track{
+  margin-left: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 90px;
+  width: 12px;
+  // box-shadow: 10px 5px 5px black;
+}
+
 `;
 
 export const Card = styled.div `
@@ -40,6 +59,7 @@ export const Card = styled.div `
  background-color: var(--darkGrey);
  border-radius: 8px;
  padding: 16px;
+ margin-right: 10px;
 
  .playlist_name {
   text-decoration: none;

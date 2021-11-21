@@ -1,37 +1,42 @@
-    .track-info {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        background-color: var(--darkGrey);
-        margin-bottom: 10px;
-        padding: 10px;
-    }
-    
-    li {
-        margin-bottom: 5px;
-        transform: scale(0.99);
-        overflow-x: hidden;
-    }
-    
-    li:hover {
-        transform: scale(1.01);
+.track-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkGrey);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+    transform: scale(0.99);
+    overflow: hidden;
+}
+
+
+/* li:hover {
+        transform: scale(1.005);
         cursor: pointer;
-    }
-    /* .album-cover {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 35%;
-        height: auto;
-        margin-bottom: 10px;
+        overflow: hidden;
     } */
-    
-    .album-cover {
-        width: 20vh;
-        height: 20vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-bottom: 10px;
-        /* background-position: center; */
-        align-self: center;
-    }
+
+.album-cover {
+    width: 20vh;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+    /* background-position: center; */
+    align-self: center;
+}
+
+.track-number,
+.track-name,
+.track-duration {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+}
+
+.track-name {
+    font-size: 10px;
+}
