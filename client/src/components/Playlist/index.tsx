@@ -9,7 +9,8 @@ const Playlist = ({track}:any) => {
   <>
   <Wrapper>
     <Content>
-                <div>
+      <div style={{fontFamily:'Courier New'}}>
+                <div >
                   <img className="album_img"src={track.track.album.images[0].url} alt="album-cover"/>
                 </div>
                 <div className="left_box">
@@ -21,7 +22,7 @@ const Playlist = ({track}:any) => {
                   </div>
                 </div>
                 <h3 className="album_name">{track.track.album.name}</h3>
-
+      </div>
 
     </Content>
   </Wrapper>

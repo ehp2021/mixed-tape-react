@@ -75,10 +75,10 @@ type PlaylistProp = {
   }
 }
 
-const Home = ({code}:string) => {
+const Home = () => {
   const [topArtists, setTopArtists] = useState<PlaylistProp[]>([])
   const [relArtist, setRelArtist] = useState<any>([])
-  console.log(code, "CODE")
+  // console.log(code, "CODE")
   useEffect(() => {
     const getUserData = async () => {
       const userTopArtists = await getTopArtists()

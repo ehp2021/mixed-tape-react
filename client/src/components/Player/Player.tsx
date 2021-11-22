@@ -1,16 +1,22 @@
-import React from 'react'
-import SpotifyPlayer from 'react-spotify-web-playback'
+import { useState, useEffect } from "react";
+import SpotifyPlayer from "react-spotify-web-playback";
+import './Player.css';
 
-export default function Player({uri, accessToken}: any) {
+export default function Player({ accessToken, trackUri }) {
+    const [play, setPlay] = useState(false)
 
-// check out WDS spotify clone YT
-// https://www.youtube.com/watch?v=Xcet6msf3eE
+    useEffect(() => setPlay(true), [trackUri])
 
-    if (!{accessToken}) return null;
-    return <SpotifyPlayer
-            token={accessToken}
-            // uri={trackUri? [uri]: []}
-            play
-            
-            />
+    if (!accessToken) return null
+    return ( <
+        SpotifyPlayer token = { accessToken }
+        showSaveIcon callback = {
+            state => {
+                if (!state.isPlaying) setPlay(false)
+            }
+        }
+        play = { play }
+        uris = { trackUri ? [trackUri] : [] }
+        />
+    )
 }

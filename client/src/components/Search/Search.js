@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import Header from '../Sidebar'
-import {Wrapper} from './Search.styles';
+import {Wrapper, Content} from './Search.styles';
 import SpotifyWebApi from "spotify-web-api-node";
 import TrackSearchResult from "../TrackSearchResult/TrackSearchResult";
 import {getAccess} from '../../APIs'
+import './Search.css';
+import Player from '../Player/Player';
 
 
 
@@ -17,10 +19,11 @@ const Search = ({code}) => {
     const accessToken = code
     const [search, setSearch] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const [playingTrack, setPlayingTrack] = useState()
 
     function chooseTrack(track) {
-        // setPlayingTrack(track)
-        setSearch("")
+        setPlayingTrack(track)
+        // setSearch("")
         // setLyrics("")
       }
     
@@ -61,27 +64,41 @@ const Search = ({code}) => {
    
 
     return (
-        <div> 
+        <Wrapper> 
+         
             <Header /> 
-            <Container> 
-                <Form.Control 
-                    type="search"
-                    placeholder="Search Songs/Artists"
-                    value={search} 
-                    onChange={e => setSearch(e.target.value)}
-                
-                />
-                <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-                    {searchResults.map(track => (
-                    <TrackSearchResult
-                        track={track}
-                        key={track.uri}
-                        chooseTrack={chooseTrack}
-                    />
-                    ))}
+            
+            <Content>
+              <div className="search-form-container">
+                <div className="search-icon">
+                  <i className="fas fa-search"></i>
                 </div>
-            </Container>
-        </div>
+                    <Form.Control 
+                   
+                        className="search-form"
+                        type="search"
+                        placeholder={`Search Songs/Artists`}
+                        value={search} 
+                        onChange={e => setSearch(e.target.value)}
+                        style={{fontFamily:'Courier New'}}
+                    
+                    /> 
+              </div>
+                    <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
+                        {searchResults.map(track => (
+                        <TrackSearchResult
+                            track={track}
+                            key={track.uri}
+                            chooseTrack={chooseTrack}
+                        />
+                        ))}
+                    </div>
+
+                    <div className="player-container">
+                      <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+                    </div>
+            </Content>
+        </Wrapper>
 
     )
 
