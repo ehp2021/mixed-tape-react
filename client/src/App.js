@@ -39,7 +39,7 @@ const App = () => {
                 <Route path = "/playlists" >
                   <Playlists />
                 </Route> <Route path = "/album/:id" >
-                  <AlbumPage />
+                  <AlbumPage accessToken={accessToken} />
                 </Route> <Route path = "/artist/:id" >
                   <ArtistPage/>
                 </Route> <Route path = "/" >

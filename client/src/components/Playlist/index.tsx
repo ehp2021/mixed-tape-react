@@ -1,5 +1,5 @@
 import React from "react";
-
+import './Playlist.css';
 
 import { Wrapper, Content } from "./Playlist.styles.js";
 
@@ -9,20 +9,22 @@ const Playlist = ({track}:any) => {
   <>
   <Wrapper>
     <Content>
-      <div style={{fontFamily:'Courier New'}}>
-                <div >
-                  <img className="album_img"src={track.track.album.images[0].url} alt="album-cover"/>
-                </div>
-                <div className="left_box">
-                    <h3 className="track_name">{track.track.name}</h3>
-                    <div className="artist_name" >
-                    {track.track.artists.map((artist:any, i:string) => (
-                        <li key={i}>{artist.name}</li>
-                    ))}
-                  </div>
-                </div>
-                <h3 className="album_name">{track.track.album.name}</h3>
-      </div>
+      <div className="track-info" style={{fontFamily:'Courier New'}}>
+          <div >
+            <img className="album_img" src={track.track.album.images[0].url} alt="album-cover"/>
+          </div>
+          <div className="right_box">
+            <div  className="track_name"><h2>{track.track.name}</h2></div>
+            <div className="artist_name" >
+              {track.track.artists.map((artist:any, i:string) => (
+                  <li key={i}>{artist.name}</li>
+              ))}
+            </div>
+            <div className="album_name">
+              <h3 >{track.track.album.name}</h3>
+            </div>
+          </div>
+        </div>
 
     </Content>
   </Wrapper>

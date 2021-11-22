@@ -1,0 +1,33 @@
+.track-info {
+    display: flex;
+}
+
+.album_img {
+    margin-top: 40px;
+    width: 90px;
+    margin: 5 px;
+}
+
+.right_box {
+    /* display: flex; */
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.track_name {
+    margin: 0;
+    flex: 1;
+}
+
+.artist_name {
+    display: flex;
+    gap: 8 px;
+    line-height: 1;
+}
+
+.album_name {
+    flex: 3;
+    padding-left: 20 px;
+}

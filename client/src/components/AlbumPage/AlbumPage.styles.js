@@ -13,7 +13,7 @@ export const New_Wrapper = styled.div `
   margin: 0;
   margin-bottom:2px;
   color: white;
-  padding: 20px;
+  // padding: 20px;
   flex: 4;
   display: flex;
   flex-direction: column;
@@ -36,8 +36,9 @@ list-style: none;
 background-color: var(--medGrey);
 margin: 0;
 height: 100%;
-overflow-y: hidden;
 flex: 4;
+margin-right: 35px;
+border-radius: 10px;
 
 .list_item {
     position: relative;
@@ -45,6 +46,7 @@ flex: 4;
     background-color: var(--darkGrey);
     margin-bottom: 5px;
     padding:10px;
+    
 
 
   :hover {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div `
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Content = styled.ul`
+export const Content = styled.ul `
 list-style: none;
 background-color: black;
 margin: 0;
@@ -25,11 +25,11 @@ flex: 4;
     display: flex;
     background-color: var(--darkGrey);
     margin-bottom: 10px;
+    border-radius: 20px;
 
 
-  :hover {
-    background-color: var(--medGrey);
-  }
+  // :hover {
+  //   background-color: var(--medGrey);
+  // }
 }
 `;
-
