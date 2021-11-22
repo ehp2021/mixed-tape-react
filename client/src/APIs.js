@@ -60,3 +60,8 @@ export const getAlbumInfo = async(id) => {
         console.log(e)
     }
 }
+
+export const getAccess = async() => {
+    const Tokens = await axios.get('http://localhost:3001/callback')
+    return Tokens
+}

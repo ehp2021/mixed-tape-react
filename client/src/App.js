@@ -12,43 +12,46 @@ import Tracks from "./components/Tracks/Tracks"
 import Playlists from "./components/PlaylistsPage/Playlists"
 import ArtistPage from "./components/ArtistPage/ArtistPage"
 import AlbumPage from "./components/AlbumPage/AlbumPage"
+import Search from "./components/Search/Search"
 
 import { accessToken } from "./config"
 
+// const code = new URLSearchParams(window.location.search).get('code')
 const App = () => {
     const [access, setAccess] = useState([])
 
     useEffect(() => {
         setAccess(accessToken)
+        // console.log(accessToken, "ACCESS token received")
     }, [access])
 
-    return (
-      <Router>
-        {access && access.length ? (
-          <Switch>
-            <Route path="/playlist/:id">
-              <Tracks />
-            </Route>
-            <Route path="/search" />
-            <Route path="/playlists">
-              <Playlists />
-            </Route>
-            <Route path="/album/:id">
-              <AlbumPage />
-            </Route>
-            <Route path="/artist/:id">
-              <ArtistPage />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        ) : (
-          <Login />
-        )}
-  
+    return ( 
+    <Router > 
+        {
+            access && access.length ? ( 
+              <Switch>
+                <Route path = "/playlist/:id" >
+                  <Tracks/>
+                </Route> 
+                <Route path = "/search" >
+                  <Search code={accessToken} />
+                </Route>
+                <Route path = "/playlists" >
+                  <Playlists />
+                </Route> <Route path = "/album/:id" >
+                  <AlbumPage />
+                </Route> <Route path = "/artist/:id" >
+                  <ArtistPage/>
+                </Route> <Route path = "/" >
+                  <Home code={accessToken}/>
+                </Route> 
+                </Switch >
+            ) : ( <Login/>
+            )
+        }
+
         <GlobalStyle />
-      </Router>
+    </Router>
     );
-  };
-  export default App;
+};
+export default App;
