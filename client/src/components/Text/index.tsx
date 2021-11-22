@@ -6,7 +6,7 @@ const Text = ({ text }: { text: string }) => {
   return (
     <Wrapper>
       <Content>
-        <p>{text}</p>
+        <p style={{fontFamily:'courier New'}}>{text}</p>
       </Content>
     </Wrapper>
   );

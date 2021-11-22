@@ -14,7 +14,7 @@ const Playlist = ({track}:any) => {
             <img className="album_img" src={track.track.album.images[0].url} alt="album-cover"/>
           </div>
           <div className="right_box">
-            <div  className="track_name"><h2>{track.track.name}</h2></div>
+            <div className="track_name"><h2>{track.track.name}</h2></div>
             <div className="artist_name" >
               {track.track.artists.map((artist:any, i:string) => (
                   <li key={i}>{artist.name}</li>

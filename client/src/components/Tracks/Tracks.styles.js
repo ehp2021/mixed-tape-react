@@ -26,7 +26,7 @@ flex: 4;
     background-color: var(--darkGrey);
     margin-bottom: 10px;
     border-radius: 20px;
-
+    margin-right: 30px;
 
   // :hover {
   //   background-color: var(--medGrey);
