@@ -3,52 +3,57 @@ import { Form } from 'react-bootstrap';
 import Header from '../Sidebar'
 import {Wrapper, Content} from './Search.styles';
 import SpotifyWebApi from "spotify-web-api-node";
-import TrackSearchResult from "../TrackSearchResult/TrackSearchResult";
+
 import {getAccess} from '../../APIs'
 import './Search.css';
 import Player from '../Player/Player';
+import TrackSearchResult from '../TrackSearchResult/TrackSearchResult.tsx'
 
-
+type SearchResultsType={
+  albumUrl:string
+  artist: string
+  title: string
+  uri: string
+}
 
 const spotifyApi = new SpotifyWebApi({
     clientId: 'ac468ec84f8d4070843bb0ce3cfd5c95'
   })
 
-const Search = ({code}) => {
+const Search = ({code}:any) => {
 
     const accessToken = code
-    const [search, setSearch] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
-    const [playingTrack, setPlayingTrack] = useState()
+    const [search, setSearch] = useState<string>("");
+    const [searchResults, setSearchResults] = useState<SearchResultsType[]>([]);
+    const [playingTrack, setPlayingTrack] = useState<SearchResultsType>()
 
-    function chooseTrack(track) {
+    function chooseTrack(track: SearchResultsType) {
         setPlayingTrack(track)
         // setSearch("")
         // setLyrics("")
       }
     
-      useEffect(() => {
+      useEffect(():any => {
         if (!accessToken) return
         spotifyApi.setAccessToken(accessToken)
       }, [accessToken])
     
-      useEffect(() => {
+      useEffect(():any => {
         if (!search) return setSearchResults([])
         if (!accessToken) return
     
-        let cancel = false
+        let cancel:boolean = false
         spotifyApi.searchTracks(search).then(res => {
-          if (cancel) return
+          if (cancel ) return
           setSearchResults(
             res.body.tracks.items.map(track => {
               const smallestAlbumImage = track.album.images.reduce(
-                (smallest, image) => {
+                (smallest: any, image: any) => {
                   if (image.height < smallest.height) return image
                   return smallest
                 },
                 track.album.images[0]
               )
-    
               return {
                 artist: track.artists[0].name,
                 title: track.name,

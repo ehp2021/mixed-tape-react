@@ -4,19 +4,33 @@ import { getArtistAlbums } from '../../APIs'
 import Header from '../Sidebar'
 import { Wrapper, Content, Card,Image, New_Wrapper } from "./ArtistPage.styles.js";
 
+type TopAlbums = {
+  album_group: string
+  album_type: string
+  artists: any
+  available_markets: string[]
+  external_urls: {spotify: string}
+  href: string
+  id: string
+  images: any
+  name: string
+  release_date: string
+  release_date_precision: string
+  total_tracks: number
+  type: string
+  uri: string
+}
 
 const ArtistPage=()=> {
-  const {id} = useParams()
-  const [albums,setAlbums] = useState([])
-  const [name,setName] = useState(null)
+  const {id}:any = useParams()
+  const [albums,setAlbums] = useState<TopAlbums[]>([])
+  const [name,setName] = useState<string|null>(null)
 
   useEffect(()=>{
     const getUserData = async () => {
       const topAlbums = await getArtistAlbums(id);
       setAlbums(topAlbums)
       setName(topAlbums[0].artists[0].name)
-      console.log(topAlbums,'TOP ALBUMS')
-
     }
     getUserData()
   },[])
@@ -31,7 +45,7 @@ const ArtistPage=()=> {
                 
                 <Content>
                 
-                {albums.map((album, i) => (
+                {albums.map((album: TopAlbums, i:number) => (
                 <Card key={i}>
                     {album.images.length && album.images[0] && (
                         <div>

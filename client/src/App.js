@@ -10,9 +10,9 @@ import Home from "./components/Home/index"
 import Login from "./components/Login"
 import Tracks from "./components/Tracks/Tracks"
 import Playlists from "./components/PlaylistsPage/Playlists"
-import ArtistPage from "./components/ArtistPage/ArtistPage"
+import ArtistPage from "./components/ArtistPage/ArtistPage.tsx"
 import AlbumPage from "./components/AlbumPage/AlbumPage"
-import Search from "./components/Search/Search"
+import Search from "./components/Search/Search.tsx"
 
 import { accessToken } from "./config"
 

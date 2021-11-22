@@ -1,8 +1,17 @@
 import React from "react"
 import './TrackSearchResult.css'
 
-export default function TrackSearchResult({ track, chooseTrack }) {
-    function handlePlay() {
+
+type TrackType = {
+    albumUrl:string
+    artist: string
+    title: string
+    uri: string
+}
+
+export default function TrackSearchResult({ track, chooseTrack }:{track: TrackType, chooseTrack:any} ) {
+
+    function handlePlay():void {
         chooseTrack(track)
     }
 
