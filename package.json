@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/LaurieLonecrow/mixed-tape-react/issues"
   },
-  "homepage": "https://github.com/LaurieLonecrow/mixed-tape-react#readme"
+  "homepage": "https://github.com/LaurieLonecrow/mixed-tape-react#readme",
+  "dependencies": {
+    "spotify-web-api-node": "^5.0.2"
+  }
 }
