@@ -34,8 +34,8 @@ const App = () => {
                 <Search code = { accessToken }
                 /> </Route > <Route path = "/playlists">
                 <Playlists/>
-                </Route> <Route path = "/album /: id " ><AlbumPage accessToken = { accessToken }
-                /> </Route > < Route path = "/artist /: id " > <ArtistPage />
+                </Route> <Route path = "/album/:id" ><AlbumPage accessToken = { accessToken }
+                /> </Route > < Route path = "/artist/:id" > <ArtistPage />
                 </Route> <Route path = "/"> <Home code = { accessToken }
                 /> </Route > </Switch >
             ) : ( < Login /> )
