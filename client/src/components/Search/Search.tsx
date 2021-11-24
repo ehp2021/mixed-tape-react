@@ -7,7 +7,7 @@ import SpotifyWebApi from "spotify-web-api-node";
 import {getAccess} from '../../APIs'
 import './Search.css';
 import Player from '../Player/Player';
-import TrackSearchResult from '../TrackSearchResult/TrackSearchResult.tsx'
+import TrackSearchResult from '../TrackSearchResult/TrackSearchResult'
 
 type SearchResultsType={
   albumUrl:string
@@ -43,10 +43,10 @@ const Search = ({code}:any) => {
         if (!accessToken) return
     
         let cancel:boolean = false
-        spotifyApi.searchTracks(search).then(res => {
+        spotifyApi.searchTracks(search).then((res: any) => {
           if (cancel ) return
           setSearchResults(
-            res.body.tracks.items.map(track => {
+            res.body.tracks.items.map((track:any) => {
               const smallestAlbumImage = track.album.images.reduce(
                 (smallest: any, image: any) => {
                   if (image.height < smallest.height) return image

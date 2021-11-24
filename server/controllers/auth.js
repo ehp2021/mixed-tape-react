@@ -41,26 +41,26 @@ const login = (req, res) => {
         }));
 };
 
-const login = (req, res) => {
-    const code = req.body.code
-    const spotifyApi = new SpotifyWebApi({
-        redirectUri: redirect_uri,
-        clientId: client_id,
-        clientSecret: client_secret,
-    })
-    spotifyApi
-        .authorizationCodeGrant(code)
-        .then(data => {
-            res.json({
-                accessToken: data.body.access_token,
-                refreshToken: data.body.refresh_token,
-                expiresIn: data.body.expires_in,
-            })
-        })
-        .catch(err => {
-            res.sendStatus(400)
-        })
-}
+// const login = (req, res) => {
+//     const code = req.body.code
+//     const spotifyApi = new SpotifyWebApi({
+//         redirectUri: redirect_uri,
+//         clientId: client_id,
+//         clientSecret: client_secret,
+//     })
+//     spotifyApi
+//         .authorizationCodeGrant(code)
+//         .then(data => {
+//             res.json({
+//                 accessToken: data.body.access_token,
+//                 refreshToken: data.body.refresh_token,
+//                 expiresIn: data.body.expires_in,
+//             })
+//         })
+//         .catch(err => {
+//             res.sendStatus(400)
+//         })
+// }
 
 
 const getToken = (req, res) => {
@@ -98,4 +98,4 @@ const getToken = (req, res) => {
     
 
 
-  module.exports = { login, getToken};(r)
+  module.exports = { login, getToken};
