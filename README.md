@@ -4,7 +4,7 @@ Mixed Tape allows users to create shareable Spotify playlists with customized fe
 Check out our full demo video here: https://www.youtube.com/watch?v=WxTYlfg_0uU 
 
 ![screenshot](https://github.com/ehp2021/mixed-tape-react/blob/main/screenshot1.png)
-![screenshot](https://github.com/ehp2021/mixed-tape-react/blob/main/screenshot2.png)
+
 
 # Collaborators
 - [Ayaan Namazi](https://github.com/namaziay)
