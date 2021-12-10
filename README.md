@@ -1,7 +1,10 @@
 # MIXED TAPE
+Mixed Tape allows users to create shareable Spotify playlists with customized features and descriptions for each song (like a mixtape).
 
-
-This is an app I built as a solo-project for a coding bootcamp.
+# Collaborators
+- [Ayaan Namazi](https://github.com/namaziay)
+- [Emily Park](https://github.com/ehp2021)
+- [Joao Felipe Silveira](https://github.com/accessjoao)
 
 ## Installation
 
