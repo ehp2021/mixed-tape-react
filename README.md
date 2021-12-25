@@ -1,7 +1,8 @@
 # MIXED TAPE
 
 
-This is an app I built as a solo-project for a coding bootcamp.
+Mixed Tape is a React-based web application that allows users to create sharable Spotify playlists with
+customized features and descriptions for each song.
 
 ## Installation 
 
